@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+scrollbar-width: auto;
+scrollbar-color: #8f54a0 #ef4e4e;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+background: #1B181D;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: #3B383D;
+border-radius: 10px;
+border: none;
+}
+
+body {
+    background-color: #1B181D;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Open Sans', 'sans-serif';
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: bold; 
+}
+
+.primary-button {
+    background-color: #FF7430;
+    transition: 0.2s all;
+    text-transform: uppercase;
+}
+
+.primary-button:hover {
+    box-shadow:0px 0px 10px rgba(255,116,48,0.3);
+}
+
+.secondary-button {
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: 0.2s all;
+    text-transform: uppercase;
+}
+
+.secondary-button:hover {
+    border: 1px solid white;
+    box-shadow:0px 0px 10px rgba(255,255,255,0.3);
+    text-shadow:0px 0px 10px rgba(255,255,255,0.3);
+}
+
+.secondary-button:hover svg {
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+}
+
+.customInput:focus {
+    outline: 1px solid white;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.admin-dashboard-tab-active {
+    background-color: #6B696C;
+}
+
+.admin-dashboard-tab-inactive:hover {
+    background-color: #6B696C;
+}
+
+.single-movie-admin {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+.single-movie:hover .single-movie-admin-commands {
+    display: flex !important
+}
+
+.single-movie {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    padding-bottom: 150%;
+}
+
+.single-movie:hover {
+    box-shadow: 0px 0px 15px rgba(255,255,255,0.2);
+    outline: 1px solid white;
+}
+
+.movie-overlay-gradient {
+    background: transparent linear-gradient(180deg, #1B181D66 0%, #1B181DA6 9%, #1B181DE6 25%, #1B181DF2 49%, #1B181D 80%, #1B181D 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.inputwcontrol:focus-within{
+    outline: 1px solid white;
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.2);
+}
+
+.searchwcontrol:focus-within .search-icon path {
+    fill: white
+}
+
+
+.single-movie:hover {
+    box-shadow: 0px 0px 15px rgba(255,255,255,0.2);
+}
+
+.single-movie img {
+    max-width: 100%;
+    transition: all 0.3s;
+    transform: scale(1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.single-movie:hover img {
+    transform: scale(1.1);
+}
+
+.customCheckbox {
+  display: flex;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-items: center;
+}
+
+.customCheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.customCheckbox:hover input ~ .checkmark {
+  box-shadow: 0px 0px 15px rgba(255,255,255,0.3);
+}
+
+.customCheckbox input:checked ~ .checkmark {
+  background-color: white;
+  border: none;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.customCheckbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.customCheckbox .checkmark:after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.409' height='8' viewBox='0 0 9.409 8'%3E%3Cpath id='interface-validation-check_1_' data-name='interface-validation-check (1)' d='M9.141,187.192a.326.326,0,0,0-.192.092c-.01.01-1.339,1.617-2.954,3.57-1.646,1.991-2.946,3.562-2.96,3.574a.343.343,0,0,1-.187.085.339.339,0,0,1-.291-.114c-.009-.011-.432-.553-.939-1.2S.688,192,.677,191.989a.334.334,0,0,0-.161-.087.4.4,0,0,0-.154,0,.345.345,0,0,0-.232.2.369.369,0,0,0-.011.214,8.7,8.7,0,0,0,.968,1.284c.509.655.942,1.21.961,1.232a1,1,0,0,0,.5.316,1.017,1.017,0,0,0,.6-.025,1.033,1.033,0,0,0,.286-.159c.086-.068-.018.057,3.064-3.673,1.612-1.95,2.939-3.557,2.949-3.571a.356.356,0,0,0,.055-.111.436.436,0,0,0,0-.176.341.341,0,0,0-.285-.246.25.25,0,0,0-.082,0' transform='translate(-0.108 -187.189)' fill='%23575757' fill-rule='evenodd'/%3E%3C/svg%3E%0A");
+  left: 6px;
+  top: -4px;
+  height: 8px;
+  width: auto;
+}
+
+.avatar {
+    position: relative;
+}
+
+.avatar::after {
+  position: absolute;
+  content: '';
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  border: 3px solid white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+th, td {
+    padding: 28px;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #28262A;
+    border-radius: 20px;
+}
+
+thead th:first-child {
+    border-radius: 10px 0px 0px 0px;
+}
+
+thead th:last-child {
+    border-radius: 0px 10px 0px 0px;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0px 0px 0px 10px;
+}
+
+tr:last-child > td:last-child {
+    border-radius: 0px 0px 10px 0px;
+}
+
+.order-buttons svg path:hover {
+    fill: #CBCBCB;
+    cursor: pointer;
+}
+
+.invoice {
+    border-radius: 10px;
+    border: 1px solid #3B383D;
+}
+
+.invoice p {
+    color: white
+}
+
+.invoice .selected-seat {
+    margin-bottom: 12px;
+}
+
+.invoice .selected-seat:last-child {
+    margin-bottom: 0px;
+}
+
+.invoice .total {
+    margin: 28px 0px;
+    font-weight: bold;
+}
+
+
+
+.date:hover, .time:hover {
+    cursor: pointer;
+    outline: 1px solid white;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.15);
+}
+
+.date-selected {
+    background-color: #FF7430;
+    box-shadow: 0px 0px 15px rgba(255,116,48,0.4);
+}
+
+.time-selected {
+    box-shadow: 0px 0px 15px rgba(255,116,48,0.4);
+}
+
+.time-selected .time-part {
+    background-color: #FF7430;
+}
+
+.time-selected .mode-part {
+    background-color: #Ffffff;
+    color: #1B181D;
+    font-weight: 700;
+}
+
+.selectedSeat {
+    background-color: #FF7430;
+    box-shadow: 0px 0px 15px rgba(255,116,48,0.4);
+}
+
+.barcode svg {
+    width: 100%;
+}
+
+.ticket {
+    position: absolute;
+}
+
+.ticket .reservation-info, .ticket .barcode {
+    box-shadow:0px 0px 20px rgba(0,0,0,0.15);
+}
+
+.first-ticket {
+    z-index: 10;
+}
+
+.second-ticket {
+    transform: rotate(-5deg);
+}
+
+.movie-option:hover {
+    background-color: #2B282D;
+    cursor:pointer;
+}
+
+.movie-option {
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.react-calendar {
+    background-color: #3B383D !important;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    border: none !important;
+    width: 370px
+}
+
+.react-calendar__tile {
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    background-color:#6B696C;
+}
+
+.react-calendar__tile:enabled:hover {
+    background-color:#1B181D !important;
+}
+
+
+.react-calendar__navigation button:enabled:hover {
+    background-color:#1B181D !important;
+    border-radius: 5px;
+}
+
+
+.react-calendar__month-view__days__day--weekend {
+    color: white !important;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+    color:#6B696C !important;
+}
+
+.react-calendar__tile--active {
+    background-color: white !important;
+    color:#1B181D !important;
+}
+
+.react-calendar__tile:enabled:focus {
+    background-color: white;
+}
+
+.react-calendar__navigation button:enabled:focus  {
+    background-color: transparent !important;
+}
+
+.react-calendar__tile--now {
+    background-color:#FF7430 !important;
+}
+
+
+
+.customRadio {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: medium;
+    color:White;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+  }
+  
+  .customRadio + .customRadio {
+    margin-top: 1em;
+  }
+  
+  
+  input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 1.15em;
+    height: 1.15em;
+    border: 1px solid #B4B4B4;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    
+  }
+  
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+    background-color: white;
+  }
+  
